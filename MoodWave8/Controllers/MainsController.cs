@@ -36,7 +36,7 @@ namespace MoodWave8.Controllers
             return View(main);
         }
 
-        // GET: Mains/Create
+        //GET: Mains/Create
         public ActionResult Create()
         {
             ViewBag.UserName = new SelectList(db.Users, "UserName", "UserName");
@@ -204,7 +204,7 @@ namespace MoodWave8.Controllers
             return Json(json, JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult Stuff(Main u)
+        public ActionResult GetSimilar(Main u)
         {
             string track = null, artist = null;
             List<Main> m = db.Mains.ToList();

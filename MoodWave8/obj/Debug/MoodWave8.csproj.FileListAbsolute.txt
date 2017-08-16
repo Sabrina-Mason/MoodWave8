@@ -87,6 +87,6 @@ c:\users\student\documents\visual studio 2017\Projects\MoodWave8\MoodWave8\bin\M
 c:\users\student\documents\visual studio 2017\Projects\MoodWave8\MoodWave8\bin\Microsoft.AI.ServerTelemetryChannel.xml
 c:\users\student\documents\visual studio 2017\Projects\MoodWave8\MoodWave8\bin\Microsoft.AI.WindowsServer.xml
 c:\users\student\documents\visual studio 2017\Projects\MoodWave8\MoodWave8\bin\Microsoft.AI.Web.xml
-c:\users\student\documents\visual studio 2017\Projects\MoodWave8\MoodWave8\obj\Debug\MoodWave8.csprojResolveAssemblyReference.cache
 c:\users\student\documents\visual studio 2017\Projects\MoodWave8\MoodWave8\obj\Debug\MoodWave8.dll
 c:\users\student\documents\visual studio 2017\Projects\MoodWave8\MoodWave8\obj\Debug\MoodWave8.pdb
+C:\Users\Student\documents\visual studio 2017\Projects\MoodWave8\MoodWave8\obj\Debug\MoodWave8.csprojResolveAssemblyReference.cache
