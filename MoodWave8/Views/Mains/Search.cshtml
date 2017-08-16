@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Search</h2>
+
+<form action="/Mains/SearchTable" method="post">
+    <input name="__RequestVerificationToken" value="865PQ9EiDIk-qhZ25Uod4oiy9jFJdw2rWPI4aQIMiYnaUfPH22LOvCCaaLqsG2Zv-chpQFza0exfj2_pGsAXP-e--s6WSYenDWqjJ8mIzy81" type="hidden">    <div class="form-horizontal">
+        <h4>Main</h4>
+        <hr>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="UserName">UserName</label>
+            <div class="col-md-10">
+                <select class="form-control" id="UserName" name="UserName">
+                    <option value="ariana">ariana</option>
+                    <option value="josh">josh</option>
+                    <option value="sabrinamason01">sabrinamason01</option>
+                    <option value="torbee">torbee</option>
+                </select>
+                <span class="field-validation-valid text-danger" data-valmsg-for="UserName" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Mood">Mood</label>
+            <div class="col-md-10">
+                <select class="form-control" id="Mood" name="Mood">
+                    <option value="happy">Happy</option>
+                    <option value="angry">Angry</option>
+                    <option value="chill">Chill</option>
+                    <option value="energized">Energized</option>
+                    <option value="neutral">Neutral</option>
+                    <option value="sad">Sad</option>
+                    <option value="romantic">Romantic</option>
+                </select>
+                <span class="field-validation-valid text-danger" data-valmsg-for="Mood" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input value="Create" class="btn btn-default" type="submit">
+            </div>
+        </div>
+    </div>
+</form>
