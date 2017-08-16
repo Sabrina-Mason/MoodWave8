@@ -5,13 +5,10 @@
 
 <h2>Discovery</h2>
 
-<head>
-    <title>Get the top artists and their playcounts using last.fm API</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-</head>
 
 
-<form action="/Mains/SearchTable" method="post">
+
+<form action="/Mains/Stuff" method="post">
     <input name="__RequestVerificationToken" value="865PQ9EiDIk-qhZ25Uod4oiy9jFJdw2rWPI4aQIMiYnaUfPH22LOvCCaaLqsG2Zv-chpQFza0exfj2_pGsAXP-e--s6WSYenDWqjJ8mIzy81" type="hidden">    <div class="form-horizontal">
         <h4>Main</h4>
         <hr>
@@ -54,23 +51,9 @@
     </div>
 </form>
 
-@ViewBag.Test1
-@ViewBag.Test2
 
-<script>
-    $(document).ready(function () {
-        $.getJSON("http://ws.audioscrobbler.com/2.0/?method=get.similartrack.similar&track=@ViewBag.Test1&artist=@ViewBag.Test2api_key=8468e49f31e72233a11b83ea4d4a1e6e&limit=10&format=json&callback=?", function (json) {
-            // method=user.getTopArtists&user=test&api
-            // /2.0/?method=geo.gettopartists&country=spain&api_key=YOUR_API_KEY&format=json
-            var html = '';
-            $.each(json.topartists.artist, function (i, item) {
-                html += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " + item.playcount + "</a></p>";
-            });
-            $('#result').append(html);
-        });
-    });
-</script>
-<div id="result"></div>
+
+
 
 
 

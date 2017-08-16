@@ -37,5 +37,14 @@
       <End Role="Users" EntitySet="Users" />
       <End Role="Main" EntitySet="Mains" />
     </AssociationSet>
+    <EntitySet Name="Temps" EntityType="MoodwaveModel.Temp" />
   </EntityContainer>
+  <EntityType Name="Temp">
+    <Key>
+      <PropertyRef Name="Index" />
+    </Key>
+    <Property Name="Track" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Artist" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Index" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
 </Schema>

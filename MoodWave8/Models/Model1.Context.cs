@@ -27,5 +27,6 @@ namespace MoodWave8.Models
     
         public virtual DbSet<Main> Mains { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Temp> Temps { get; set; }
     }
 }

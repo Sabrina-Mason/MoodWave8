@@ -19,5 +19,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Temps">
+      <EntityTypeMapping TypeName="MoodwaveModel.Temp">
+        <MappingFragment StoreEntitySet="Temp">
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="Artist" ColumnName="Artist" />
+          <ScalarProperty Name="Track" ColumnName="Track" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

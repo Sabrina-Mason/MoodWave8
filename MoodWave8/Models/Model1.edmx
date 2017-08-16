@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="MoodwaveModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="MoodwaveModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Main">
           <Key>
             <PropertyRef Name="index" />
@@ -14,6 +14,14 @@
           <Property Name="Track" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Artist" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Mood" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Temp">
+          <Key>
+            <PropertyRef Name="Index" />
+          </Key>
+          <Property Name="Track" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Artist" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Index" Type="nchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -35,14 +43,14 @@
         </Association>
         <EntityContainer Name="MoodwaveModelStoreContainer">
           <EntitySet Name="Main" EntityType="Self.Main" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Temp" EntityType="Self.Temp" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Main_Main" Association="Self.FK_Main_Main">
             <End Role="Users" EntitySet="Users" />
             <End Role="Main" EntitySet="Main" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MoodwaveModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -83,7 +91,16 @@
             <End Role="Users" EntitySet="Users" />
             <End Role="Main" EntitySet="Mains" />
           </AssociationSet>
+          <EntitySet Name="Temps" EntityType="MoodwaveModel.Temp" />
         </EntityContainer>
+        <EntityType Name="Temp">
+          <Key>
+            <PropertyRef Name="Index" />
+          </Key>
+          <Property Name="Track" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Artist" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Index" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -105,6 +122,15 @@
             <EntityTypeMapping TypeName="MoodwaveModel.User">
               <MappingFragment StoreEntitySet="Users">
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Temps">
+            <EntityTypeMapping TypeName="MoodwaveModel.Temp">
+              <MappingFragment StoreEntitySet="Temp">
+                <ScalarProperty Name="Index" ColumnName="Index" />
+                <ScalarProperty Name="Artist" ColumnName="Artist" />
+                <ScalarProperty Name="Track" ColumnName="Track" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

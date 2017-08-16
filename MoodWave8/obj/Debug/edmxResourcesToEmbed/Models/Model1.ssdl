@@ -10,6 +10,14 @@
     <Property Name="Artist" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="Mood" Type="nvarchar" MaxLength="20" Nullable="false" />
   </EntityType>
+  <EntityType Name="Temp">
+    <Key>
+      <PropertyRef Name="Index" />
+    </Key>
+    <Property Name="Track" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Artist" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Index" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
   <EntityType Name="Users">
     <Key>
       <PropertyRef Name="UserName" />
@@ -30,6 +38,7 @@
   </Association>
   <EntityContainer Name="MoodwaveModelStoreContainer">
     <EntitySet Name="Main" EntityType="Self.Main" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Temp" EntityType="Self.Temp" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Main_Main" Association="Self.FK_Main_Main">
       <End Role="Users" EntitySet="Users" />

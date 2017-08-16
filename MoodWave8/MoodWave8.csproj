@@ -179,6 +179,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Temp.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\User.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -246,6 +249,8 @@
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Mains\NewDiscovery.cshtml" />
+    <Content Include="Views\Mains\Data.cshtml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />

@@ -8,6 +8,7 @@
         <EntityTypeShape EntityType="MoodwaveModel.Main" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="MoodwaveModel.User" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
         <AssociationConnector Association="MoodwaveModel.FK_Main_Main" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="MoodwaveModel.Temp" Width="1.5" PointX="5.375" PointY="1.25" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

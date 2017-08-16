@@ -185,15 +185,50 @@ namespace MoodWave8.Controllers
             return View();
         
         }
-
-        public void  Stuff(Main u)
+        /*public ActionResult Data()
         {
-            ViewBag.Test1 = u.Track;
-            ViewBag.Test2 = u.Artist;
-
-           
+            return View();
+        }*/
+        public ActionResult Data()
+        {
+            List<Temp> T = db.Temps.ToList();
+            string track = "";
+            string artist = "";
+            //Does not handle iteration properly for multiple case
+            foreach (Temp t in T)
+            {
+                track = t.Track;
+                artist = t.Artist;
+            }
+            var json = new { Track = track, Artist = artist };
+            return Json(json, JsonRequestBehavior.AllowGet);
         }
 
+        public ActionResult Stuff(Main u)
+        {
+            string track = null, artist = null;
+            List<Main> m = db.Mains.ToList();
+            foreach (Main a in m)
+            {
+                if (u.Mood == a.Mood && u.UserName == a.UserName)
+                {
+                    track = a.Track; //need to make an empty list and put these into it
+                    artist = a.Artist;
+                }
+            }
+            //Remove all entries from temps database
+            foreach (var entity in db.Temps)
+                db.Temps.Remove(entity);
+
+            //Add new entry (Need to iterate when you create a list for multiples)
+            db.Temps.Add(new Temp { Track = track, Artist = artist, Index = "1" });
+            db.SaveChanges();
+            return View("NewDiscovery");
+        }
+         public ActionResult NewDiscovery()
+        {
+            return View();
+        }
       
 
         //public ActionResult GetSimilar(Main u)
