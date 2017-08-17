@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "NewDiscovery";
+}
+
+<h2>NewDiscovery</h2>
+<head>
+    <title>Get the top artists and their playcounts using last.fm API</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+
+<script>
+    $.ajax({
+        type: "GET",
+        url: "Data",
+        success: function (data) {
+            //Again, this is super specific for a single return case. You'll need to make a loop to handle multiple and probably do multiple splits (i.e. data.split(';') [split on the delimiter for each entry] -> parts[0].split(' ') [split for track and artist within each entry]) THIS IS SUPER PSEUDO CODE
+            var track = (data.Track).replace(' ', '+').toLowerCase();
+            var artist = (data.Artist).replace(' ', '+').toLowerCase();
+
+            var jsonString = "http://ws.audioscrobbler.com/2.0/?method=track.getsimilar&track=" + track + "&artist=" + artist + "&api_key=8468e49f31e72233a11b83ea4d4a1e6e&limit=10&format=json&callback=?";
+
+            $(document).ready(function () {
+                $.getJSON(jsonString,
+
+                    function (json) {
+
+                        var html = '';
+                        $.each(json.similartracks.track, function (i, item) {
+                            html += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " + item.playcount + "</a></p>";
+                        });
+                        $('#result').append(html);
+                    });
+            });
+        },
+        error: function (error) {
+            console.log("doesn'tmatter");
+        }
+    });
+</script>
+<div id="result"></div>

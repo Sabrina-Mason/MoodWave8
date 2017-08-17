@@ -1,0 +1,59 @@
+﻿<form action="/Mains/Create" method="post">
+    @Html.AntiForgeryToken()    
+    <div class="form-horizontal">
+        <h4>Main</h4>
+        <hr>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="UserName">UserName</label>
+            <div class="col-md-10">
+                <select class="form-control" id="UserName" name="UserName">
+                    <option value="ariana">ariana</option>
+                    <option value="josh">josh</option>
+                    <option value="sabrinamason01">sabrinamason01</option>
+                    <option value="torbee">torbee</option>
+                </select>
+                <span class="field-validation-valid text-danger" data-valmsg-for="UserName" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Track">Track</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="Track" name="Track" value="" type="text">
+                <span class="field-validation-valid text-danger" data-valmsg-for="Track" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Artist">Artist</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="Artist" name="Artist" value="" type="text">
+                <span class="field-validation-valid text-danger" data-valmsg-for="Artist" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Mood">Mood</label>
+            <div class="col-md-10">
+                <select class="form-control" id="Mood" name="Mood">
+                    <option value="Happy">Happy</option>
+                    <option value="Angry">Angry</option>
+                    <option value="Chill">Chill</option>
+                    <option value="Energized">Energized</option>
+                    <option value="Neutral">Neutral</option>
+                    <option value="Sad">Sad</option>
+                    <option value="Romantic">Romantic</option>
+                </select>
+                <span class="field-validation-valid text-danger" data-valmsg-for="Mood" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input value="Create" class="btn btn-default" type="submit">
+            </div>
+        </div>
+    </div>
+</form>
