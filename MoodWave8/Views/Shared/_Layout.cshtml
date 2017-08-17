@@ -7,7 +7,7 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body>
+<body id="MoodBG">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -29,6 +29,13 @@
                 </ul>
             </div>
         </div>
+        <select id="MoodBox" onchange="setMood()" style="float:right;">
+            <option value="Neutral">Neutral</option>
+            <option value="Angry">Angry</option>
+            <option value="Happy">Happy</option>
+            <option value="Sad">Sad</option>
+            <option value="Chill">Chill</option>
+        </select>
     </div>
     <div class="container body-content">
         @RenderBody()
@@ -41,5 +48,6 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script src="~/Scripts/tommyshit.js"></script>
 </body>
 </html>

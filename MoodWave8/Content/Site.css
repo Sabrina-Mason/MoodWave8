@@ -7,6 +7,14 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    font-family: "Verdana", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #333333;
+   
+    background-image: url('Headphonepic.jpg');
+     background-color: #595959
+
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
